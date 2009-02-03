@@ -11,6 +11,7 @@ begin
     s.homepage = "http://github.com/geoffgarside/copian"
     s.description = "TODO"
     s.authors = ["Geoff Garside"]
+    s.add_dependency('snmp', '>= 1.0.2')
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
