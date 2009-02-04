@@ -16,6 +16,7 @@ module Copian
         end
       end
       protected
+        # :stopdoc:
         def load_ifnames
           return if @loaded_ifnames
           oid = SNMP::ObjectId.new('1.3.6.1.2.1.31.1.1.1.1')
@@ -34,6 +35,7 @@ module Copian
         def port_stats_collector
           @port_stats_collector ||= PortStatsCollector.new(@manager)
         end
+        # :startdoc:
     end
   end
 end
