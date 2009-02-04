@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class CiscoPortsCollector < PortsCollector
+    class CiscoPortsCollector < PortsCollector # :nodoc:
       def initialize(manager, vlans_collector)
         super(manager)
         @vlans_collector = vlans_collector

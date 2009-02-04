@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class AddressesCollector < AbstractCollector
+    class AddressesCollector < AbstractCollector # :nodoc:
       protected
         def append_mac_and_ip(mac, ip)
           @map ||= Hash.new

@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class HpVlansCollector < AbstractCollector
+    class HpVlansCollector < AbstractCollector # :nodoc:
       def collect
         oid = SNMP::ObjectID.new('1.3.6.1.2.1.2.2.1.3')
         @manager.walk(oid) do |r|

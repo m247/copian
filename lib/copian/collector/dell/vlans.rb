@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class DellVlansCollector < AbstractCollector
+    class DellVlansCollector < AbstractCollector # :nodoc:
       # ---
       # Dell switches assign VLANs ifIndex values equal to
       # the VLAN ID + 100000.

@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class AbstractCollector
+    class AbstractCollector # :nodoc:
       def initialize(manager)
         @manager = manager
       end

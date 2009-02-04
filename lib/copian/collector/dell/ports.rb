@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class DellPortsCollector < PortsCollector
+    class DellPortsCollector < PortsCollector # :nodoc:
       def collect
         oid = SNMP::ObjectId.new('1.3.6.1.2.1.17.7.1.2.2.1.2')
         results = Hash.new

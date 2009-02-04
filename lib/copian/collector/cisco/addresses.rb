@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class CiscoAddressesCollector < AddressesCollector
+    class CiscoAddressesCollector < AddressesCollector # :nodoc:
       def collect
         oid = SNMP::ObjectId.new('1.3.6.1.2.1.4.22.1.2')
         @manager.walk(oid) do |r|

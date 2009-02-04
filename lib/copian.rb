@@ -9,6 +9,13 @@ require 'copian/collector/hp'
 
 require 'snmp'
 
+# :stopdoc:
 class SNMP::Manager
   attr_reader :host, :community, :version
+end
+# :startdoc:
+
+module Copian # :nodoc:
+  module Collector # :nodoc:
+  end
 end

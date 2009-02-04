@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class PortsCollector < AbstractCollector
+    class PortsCollector < AbstractCollector # :nodoc:
       protected
         def suboid_to_mac(oid)
           oid.to_s.split('.').collect { |i|

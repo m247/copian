@@ -1,6 +1,6 @@
 module Copian
   module Collector
-    class PortStatsCollector < AbstractCollector
+    class PortStatsCollector < AbstractCollector # :nodoc:
       def initialize(manager)
         super(manager)
         @interfaces = Hash.new
