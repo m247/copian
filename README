@@ -1,9 +1,40 @@
-copian
-======
+= Copian
 
 Description goes here.
 
-COPYRIGHT
-=========
+== History
 
-Copyright (c) 2008 Geoff Garside. See LICENSE for details.
+=== 1.2.0 - 2009/02/04
+
+- 2 major enhancements
+  - Added VLAN collector to Dell collector
+  - Added VLAN collector to HP collector
+
+=== 1.1.1 - 2009/02/04
+
+- 1 bug fix
+  - Fixed HP ports collector incorrectly stripping information from
+    returned ObjectID resulting in invalid MAC addresses
+
+=== 1.1.0 - 2009/02/04
+
+- 3 major enhancement
+  - Dell collector with ports support
+  - HP collector with ports support
+  - Port stats, ifMtu, ifSpeed, ifAdminStatus and ifOperStatus
+- 1 extensibility enhancement
+  - Introduced Generic Collector from which the others descend
+
+=== 1.0.0 - 2009/02/03
+
+- 1 major enhancement
+  - Cisco collector supports Ports, VLANs and Addresses
+
+=== 0.0.1 - 2009/02/02
+
+- 1 major enhancement
+  - initial creation
+
+== COPYRIGHT
+
+Copyright (c) 2009 Geoff Garside. See LICENSE[link:files/LICENSE.html] for details.
