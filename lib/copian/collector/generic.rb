@@ -8,7 +8,7 @@ module Copian
         @manager = SNMP::Manager.new(:Host => ip_addr,
           :Community => community, :Version => version)
       end
-      def port_stats
+      def port_stats # :yields: ifindex, name, mtu, speed, admin_status, oper_status
         load_ifnames
 
         port_stats_collector.collect do |ifindex, mtu, speed, admin_status, oper_status|

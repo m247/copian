@@ -5,19 +5,19 @@ require File.expand_path(File.dirname(__FILE__) + '/cisco/vlans')
 module Copian
   module Collector
     class Cisco < Generic
-      def vlans
+      def vlans # :yields: id, ifindex, name
         load_ifnames
 
         vlans_collector.collect do |vlan_id, vlan_index|
           yield vlan_id, vlan_index, @ifnames[vlan_index]
         end
       end
-      def addresses
+      def addresses # :yields: mac_address, ip_addresses_array
         addresses_collector.collect do |mac, ips|
           yield mac, ips
         end
       end
-      def ports
+      def ports # :yields: ifindex, ifname, addresses_array
         load_ifnames
 
         ports_collector.collect do |port_ifindex, port_addresses|

@@ -4,7 +4,7 @@ require File.expand_path(File.dirname(__FILE__) + '/hp/vlans')
 module Copian
   module Collector
     class Hp < Generic
-      def vlans
+      def vlans # :yields: id, ifindex, name
         load_ifnames
 
         vlans_collector.collect do |vlan_id, vlan_index|
@@ -13,7 +13,7 @@ module Copian
           yield vlan_id, vlan_index, vlan_name
         end
       end
-      def ports
+      def ports # :yields: ifindex, ifname, addresses_array
         load_ifnames
 
         ports_collector.collect do |port_ifindex, port_addresses|
