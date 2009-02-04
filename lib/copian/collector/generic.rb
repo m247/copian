@@ -11,7 +11,6 @@ module Copian
       def port_stats
         load_ifnames
 
-        # ifMtu, ifSpeed, ifAdminStatus, ifOperStatus
         port_stats_collector.collect do |ifindex, mtu, speed, admin_status, oper_status|
           yield ifindex, @ifnames[ifindex], mtu, speed, admin_status, oper_status
         end
