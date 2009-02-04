@@ -8,6 +8,14 @@ module Copian
         @manager = SNMP::Manager.new(:Host => ip_addr,
           :Community => community, :Version => version)
       end
+      def port_stats
+        load_ifnames
+
+        # ifMtu, ifSpeed, ifAdminStatus, ifOperStatus
+        port_stats_collector.collect do |ifindex, mtu, speed, admin_status, oper_status|
+          yield ifindex, @ifnames[ifindex], mtu, speed, admin_status, oper_status
+        end
+      end
       protected
         def load_ifnames
           return if @loaded_ifnames
@@ -23,6 +31,9 @@ module Copian
         def append_ifname(ifindex, ifname)
           @ifnames ||= Hash.new
           @ifnames[ifindex] = ifname
+        end
+        def port_stats_collector
+          @port_stats_collector ||= PortStatsCollector.new(@manager)
         end
     end
   end
