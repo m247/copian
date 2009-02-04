@@ -16,10 +16,6 @@ module Copian
           yield if_index, addresses
         end
       end
-      protected
-        def suboid_to_mac(oid)
-          super(oid.to_s.gsub(/^[0-9]+\./, ''))
-        end
     end
   end
 end
