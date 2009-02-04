@@ -1,8 +1,16 @@
 require File.expand_path(File.dirname(__FILE__) + '/dell/ports')
+require File.expand_path(File.dirname(__FILE__) + '/dell/vlans')
 
 module Copian
   module Collector
     class Dell < Generic
+      def vlans
+        load_ifnames
+
+        vlans_collector.collect do |vlan_id, vlan_index|
+          yield vlan_id, vlan_index, @ifnames[vlan_index]
+        end
+      end
       def ports
         load_ifnames
 
@@ -11,6 +19,9 @@ module Copian
         end
       end
       private
+        def vlans_collector
+          @vlans_collector ||= DellVlansCollector.new(@manager)
+        end
         def ports_collector
           @ports_collector ||=
             DellPortsCollector.new(@manager)
