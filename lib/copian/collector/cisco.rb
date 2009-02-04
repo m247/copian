@@ -4,14 +4,7 @@ require File.expand_path(File.dirname(__FILE__) + '/cisco/vlans')
 
 module Copian
   module Collector
-    class Cisco
-      def inspect
-        "#<#{self.class} #{@manager.host}@#{@manager.community}>"
-      end
-      def initialize(ip_addr, community, version = :SNMPv2c)
-        @manager = SNMP::Manager.new(:Host => ip_addr,
-          :Community => community, :Version => version)
-      end
+    class Cisco < Generic
       def vlans
         load_ifnames
 
