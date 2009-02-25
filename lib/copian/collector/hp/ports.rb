@@ -2,7 +2,7 @@ module Copian
   module Collector
     class HpPortsCollector < PortsCollector # :nodoc:
       def collect
-        oid = SNMP::ObjectId.new('1.3.6.1.4.1.11.2.14.11.5.1.9.4.2.1.1.2')
+        oid = SNMP::ObjectId.new('1.3.6.1.2.1.17.4.3.1.2')
         results = Hash.new
 
         manager.walk(oid) do |r|
