@@ -9,7 +9,7 @@ begin
     s.summary = %Q{Suite of SNMP collectors for different types of network devices}
     s.email = "geoff@geoffgarside.co.uk"
     s.homepage = "http://github.com/geoffgarside/copian"
-    s.description = "TODO"
+    s.description = "Suite of SNMP collectors for different types of network devices"
     s.authors = ["Geoff Garside"]
     s.add_dependency('snmp', '>= 1.0.2')
   end

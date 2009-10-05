@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Geoff Garside"]
   s.date = %q{2009-10-05}
-  s.description = %q{TODO}
+  s.description = %q{Suite of SNMP collectors for different types of network devices}
   s.email = %q{geoff@geoffgarside.co.uk}
   s.extra_rdoc_files = [
     "LICENSE",
