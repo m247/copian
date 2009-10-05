@@ -15,6 +15,22 @@ module Copian
           yield ifindex, @ifnames[ifindex], mtu, speed, admin_status, oper_status
         end
       end
+
+      # Collect bandwidth statistics
+      #
+      # Arguments:
+      #   +options+
+      #
+      # Valid Options
+      #   +:64bit+  :Set to true to enable 64bit bandwidth collection. Default false.
+      def bandwidth(options = {}) # :yields: ifindex, inoctets, outoctets
+        load_ifnames
+
+        collect_method = options[:64bit] == true ? :collect64 : :collect
+        bandwidth_collector.send(collect_method) do |ifindex, inoctets, outoctets|
+          yield ifindex, @ifnames[ifindex], inoctets, outoctets
+        end
+      end
       protected
         # :stopdoc:
         def load_ifnames
@@ -34,6 +50,9 @@ module Copian
         end
         def port_stats_collector
           @port_stats_collector ||= PortStatsCollector.new(@manager)
+        end
+        def bandwidth_collector
+          @bandwidth_collector ||= BandwidthCollector.new(@manager)
         end
         # :startdoc:
     end
