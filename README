@@ -4,6 +4,11 @@ Description goes here.
 
 == History
 
+=== 1.3.1 - 2009/10/06
+
+- 1 patch
+  - Fix symbol reference for the bandwidth collector from :64bit -> :b64
+
 === 1.3.0 - 2009/10/05
 
 - 1 major enhancement
