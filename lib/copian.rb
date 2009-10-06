@@ -1,5 +1,6 @@
 require 'copian/collector/abstract_collector'
 require 'copian/collector/addresses_collector'
+require 'copian/collector/bandwidth_collector'
 require 'copian/collector/ports_collector'
 require 'copian/collector/port_stats_collector'
 require 'copian/collector/generic'
