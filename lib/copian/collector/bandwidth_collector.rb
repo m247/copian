@@ -3,6 +3,7 @@ module Copian
     class BandwidthCollector < AbstractCollector # :nodoc:
       def initialize(manager)
         super(manager)
+        @interfaces = Hash.new
       end
       def collect
         load_inoctets
@@ -25,13 +26,13 @@ module Copian
           load_property(:inoctets, SNMP::ObjectId.new('1.3.6.1.2.1.2.2.1.10'))
         end
         def load_outoctets
-          load_outoctets(:outoctets, SNMP::ObjectId.new('1.3.6.1.2.1.2.2.1.16'))
+          load_property(:outoctets, SNMP::ObjectId.new('1.3.6.1.2.1.2.2.1.16'))
         end
         def load_inoctets64
           load_property(:inoctets64, SNMP::ObjectId.new('1.3.6.1.2.1.31.1.1.1.6'))
         end
         def load_outoctets64
-          load_outoctets(:outoctets64, SNMP::ObjectId.new('1.3.6.1.2.1.31.1.1.1.10'))
+          load_property(:outoctets64, SNMP::ObjectId.new('1.3.6.1.2.1.31.1.1.1.10'))
         end
         def load_property(property, oid)
           @manager.walk(oid) do |r|
