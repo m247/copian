@@ -1,6 +1,32 @@
 = Copian
 
-Description goes here.
+Copian is a suite of SNMP network device collectors. It provides an easy way of gathering information from SNMP enabled network devices. As of the current version it supports the following
+
+- Network Interface Stats
+  - MTU size
+  - Connection speed (in bits)
+  - Admin and Oper status indicating UP/DOWN
+- Network Interface Bandwidth, including 64 bit counter support.
+- Switch port to IP Address mapping
+- Switch port to MAC Addresses
+- VLAN listings
+
+== Examples
+Collecting the status of all the network interfaces on a Cisco Router
+
+  require 'copian'
+  collector = Copian::Collector::Cisco.new('192.168.1.1', 'public')
+  collector.port_stats do |ifindex, ifname, mtu, speed, admin_status, oper_status|
+    puts "Port #{ifname} is #{oper_status} @ #{speed} bps. mtu (#{mtu})"
+  end
+  # Port 1/e1 is 1 @ 100000000. mtu(1500)
+  # ...
+
+presently the admin_status and oper_status are not interpreted, but equate to
+
+1. up
+2. down
+3. testing
 
 == History
 
