@@ -1,3 +1,4 @@
+require 'copian/version'
 require 'copian/collector/abstract_collector'
 require 'copian/collector/addresses_collector'
 require 'copian/collector/bandwidth_collector'
