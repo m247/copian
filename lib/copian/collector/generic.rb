@@ -31,6 +31,14 @@ module Copian
           yield ifindex, @ifnames[ifindex], inoctets, outoctets
         end
       end
+
+      def descriptions # :yields: ifindex, ifname, ifdescr
+        load_ifnames
+
+        description_collector.collect do |ifindex, ifdescr|
+          yield ifindex, @ifnames[ifindex], ifdescr
+        end
+      end
       protected
         # :stopdoc:
         def load_ifnames
@@ -53,6 +61,9 @@ module Copian
         end
         def bandwidth_collector
           @bandwidth_collector ||= BandwidthCollector.new(@manager)
+        end
+        def description_collector
+          @description_collector ||= DescriptionCollector.new(@manager)
         end
         # :startdoc:
     end
