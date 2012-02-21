@@ -1,3 +1,5 @@
+require 'snmp'
+
 require 'copian/version'
 require 'copian/collector/abstract_collector'
 require 'copian/collector/addresses_collector'
@@ -9,8 +11,6 @@ require 'copian/collector/generic'
 require 'copian/collector/cisco'
 require 'copian/collector/dell'
 require 'copian/collector/hp'
-
-require 'snmp'
 
 # :stopdoc:
 class SNMP::Manager
