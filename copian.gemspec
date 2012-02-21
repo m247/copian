@@ -14,5 +14,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Copian::VERSION
 
-  gem.add_dependency "snmp", ">= 1.0.2"
+  gem.add_dependency "snmp", ">= 1.0.4"
 end
