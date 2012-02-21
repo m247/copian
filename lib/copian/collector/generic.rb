@@ -23,7 +23,7 @@ module Copian
       #
       # Valid Options
       #   +:b64+  :Set to true to enable b64 bandwidth collection. Default false.
-      def bandwidth(options = {}) # :yields: ifindex, inoctets, outoctets
+      def bandwidth(options = {}) # :yields: ifindex, ifname, inoctets, outoctets
         load_ifnames
 
         collect_method = options[:b64] == true ? :collect64 : :collect
