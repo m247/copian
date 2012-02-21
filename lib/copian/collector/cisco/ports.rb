@@ -19,9 +19,9 @@ module Copian
       private
         def each_vlan
           @vlans_collector.collect do |vlan_id, vlan_index|
-            yield SNMP::Manager.new(:Host => @manager.host,
-              :Version => @manager.version,
-              :Community => "#{@manager.community}@#{vlan_id}")
+            yield SNMP::Manager.new(:host => @manager.host,
+              :version => @manager.version,
+              :community => "#{@manager.community}@#{vlan_id}")
           end
         end
         def gather_mac_bridge_ports(manager)

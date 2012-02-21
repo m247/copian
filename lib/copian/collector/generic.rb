@@ -5,8 +5,8 @@ module Copian
         "#<#{self.class} #{@manager.host}@#{@manager.community}>"
       end
       def initialize(ip_addr, community, version = :SNMPv2c)
-        @manager = SNMP::Manager.new(:Host => ip_addr,
-          :Community => community, :Version => version)
+        @manager = SNMP::Manager.new(:host => ip_addr,
+          :community => community, :version => version)
       end
       def port_stats # :yields: ifindex, name, mtu, speed, admin_status, oper_status
         load_ifnames
