@@ -22,7 +22,7 @@ Collecting the status of all the network interfaces on a Cisco Router
   # Port 1/e1 is 1 @ 100000000. mtu(1500)
   # ...
 
-presently the admin_status and oper_status are not interpreted, but equate to
+presently the +admin_status+ and +oper_status+ are not interpreted, but equate to
 
 1. up
 2. down
